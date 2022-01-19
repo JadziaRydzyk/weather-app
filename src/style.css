@@ -1,0 +1,79 @@
+.title {
+  text-align: center;
+  padding: 20px;
+  font-family: "Shadows Into Light", cursive;
+  font-size: 60px;
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #f0e9d2;
+  text-decoration: none;
+}
+
+.all {
+  background: #678983;
+}
+.container {
+  background-color: #f0e9d2;
+  margin: 40px;
+  border-radius: 3px;
+}
+.cityForms {
+  padding: 20px;
+  text-align: right;
+  margin-left: 20px;
+}
+.enterCity {
+  padding: 10px 30px;
+  border-radius: 5px;
+  border-style: none;
+  margin: 10px;
+}
+.search {
+  padding: 10px;
+  border-radius: 5px;
+  border-style: none;
+  background: rgb(230, 221, 196);
+  box-shadow: 0px 0px 7px 0px rgba(66, 68, 90, 0.32);
+  display: inline;
+}
+
+.row {
+  margin-bottom: 50px;
+}
+.info {
+  padding: 10px;
+  position: relative;
+  left: 40px;
+}
+.city {
+  font-size: 32px;
+}
+.cityName {
+  text-transform: capitalize;
+}
+.daytime {
+  font-size: 20px;
+}
+
+.wind {
+  font-size: 14px;
+}
+.big-temperature {
+  font-size: 56px;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  top: 20px;
+  bottom: 20px;
+  left: -40px;
+}
+.big-icon {
+  width: 100px;
+  position: relative;
+  top: 20px;
+  bottom: 20px;
+  padding: 10px;
+}
