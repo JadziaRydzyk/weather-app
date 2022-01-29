@@ -32,15 +32,13 @@ form.addEventListener("submit", searchTemp);
 function showLocation(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-  console.log(latitude);
-  console.log(longitude);
+
   let apiKey = "6a9394d6d39a65a984e888e3891d896e";
   let tempUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
   axios.get(`${tempUrl}`).then(showCurrentTemp);
 }
 
 function showCurrentTemp(response) {
-  console.log(response.data);
   let temp = Math.round(response.data.main.temp);
   let city = response.data.name;
   let tempInfo = document.querySelector("#temp");
