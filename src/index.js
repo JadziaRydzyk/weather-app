@@ -2,6 +2,10 @@ function showTemp(response) {
   let temp = Math.round(response.data.main.temp);
   let nowTemp = document.querySelector("#temp");
   nowTemp.innerHTML = temp;
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = Math.round(response.data.main.humidity);
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = Math.round(response.data.wind.speed);
 }
 
 function search(event) {
@@ -36,12 +40,17 @@ function showLocation(position) {
 }
 
 function showCurrentTemp(response) {
+  console.log(response.data);
   let temp = Math.round(response.data.main.temp);
   let city = response.data.name;
   let tempInfo = document.querySelector("#temp");
   tempInfo.innerHTML = temp;
   let cityInfo = document.querySelector("#city");
   cityInfo.innerHTML = city;
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = Math.round(response.data.main.humidity);
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = Math.round(response.data.wind.speed);
 }
 
 function currentTemp() {
