@@ -9,6 +9,11 @@ function showTemp(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
   let description = document.querySelector(`#description`);
   description.innerHTML = response.data.weather[0].description;
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function search(event) {
@@ -54,6 +59,11 @@ function showCurrentTemp(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
   let description = document.querySelector(`#description`);
   description.innerHTML = response.data.weather[0].description;
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function currentTemp() {
