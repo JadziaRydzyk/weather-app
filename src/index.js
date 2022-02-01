@@ -1,11 +1,14 @@
 function showTemp(response) {
   let temp = Math.round(response.data.main.temp);
+  console.log(response.data);
   let nowTemp = document.querySelector("#temp");
   nowTemp.innerHTML = temp;
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = Math.round(response.data.main.humidity);
   let wind = document.querySelector("#wind");
   wind.innerHTML = Math.round(response.data.wind.speed);
+  let description = document.querySelector(`#description`);
+  description.innerHTML = response.data.weather[0].description;
 }
 
 function search(event) {
@@ -49,6 +52,8 @@ function showCurrentTemp(response) {
   humidity.innerHTML = Math.round(response.data.main.humidity);
   let wind = document.querySelector("#wind");
   wind.innerHTML = Math.round(response.data.wind.speed);
+  let description = document.querySelector(`#description`);
+  description.innerHTML = response.data.weather[0].description;
 }
 
 function currentTemp() {

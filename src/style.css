@@ -81,3 +81,6 @@ footer {
   bottom: 20px;
   padding: 10px;
 }
+.weather-details::first-letter {
+  text-transform: capitalize;
+}
