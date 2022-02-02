@@ -29,7 +29,6 @@ function searchTemp(event) {
   let cityTemp = `${searchInput.value}`;
   let apiKey = `6a9394d6d39a65a984e888e3891d896e`;
   let tempUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityTemp}&appid=${apiKey}&units=metric`;
-
   axios.get(`${tempUrl}`).then(showTemp);
 }
 
@@ -40,7 +39,6 @@ form.addEventListener("submit", searchTemp);
 function showLocation(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-
   let apiKey = "6a9394d6d39a65a984e888e3891d896e";
   let tempUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
   axios.get(`${tempUrl}`).then(showCurrentTemp);
@@ -85,5 +83,11 @@ let days = [
 ];
 let day = days[now.getDay()];
 let hour = now.getHours();
+if (hour < 10) {
+  hour = `0${hour}`;
+}
 let min = now.getMinutes();
+if (min < 10) {
+  min = `0${min}`;
+}
 today.innerHTML = `${day} ${hour}:${min}`;
