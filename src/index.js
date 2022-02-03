@@ -1,6 +1,6 @@
 function showTemp(response) {
   let temp = Math.round(response.data.main.temp);
-  console.log(response.data);
+
   let nowTemp = document.querySelector("#temp");
   nowTemp.innerHTML = temp;
   let humidity = document.querySelector("#humidity");
@@ -14,6 +14,7 @@ function showTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  celsiusTemperature = response.data.main.temp;
 }
 
 function search(event) {
@@ -62,6 +63,7 @@ function showCurrentTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  celsiusTemperature = response.data.main.temp;
 }
 
 function currentTemp() {
@@ -69,6 +71,26 @@ function currentTemp() {
 }
 let localTempButton = document.querySelector("#localTemp-button");
 localTempButton.addEventListener("click", currentTemp);
+
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temp");
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  tempElement.innerHTML = Math.round(fahrenheitTemp);
+}
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temp");
+  tempElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemp);
 
 let now = new Date();
 let today = document.querySelector("#today-date");
@@ -91,3 +113,5 @@ if (min < 10) {
   min = `0${min}`;
 }
 today.innerHTML = `${day} ${hour}:${min}`;
+
+search("New York");
