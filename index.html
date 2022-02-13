@@ -49,103 +49,42 @@
           />
         </form>
       </div>
-      <div class="card mb-3 bg-transparent border-0" style="max-width: 540px">
-        <div class="row g-0">
-          <div class="col-md-4 p-1">
-            <img
-              src="icon/rainbow.png"
-              class="img-fluid rounded-start w-75 p-4 mx-auto d-block"
-              alt="..."
-              id="icon"
-            />
-          </div>
-          <div class="col-md-8 p-3">
-            <div class="card-body">
-              <h5 id="city" class="card-title cityName"></h5>
-              <div class="card-text">
-                <div><span id="temp"> </span> <a href="x" id="celsius-link">°C</a> | <a href="x" id="fahrenheit-link">°F</a></div>
-                <div class=" weather-details">Last updated: <span id="today-date"></span></div>
-                <div id="description" class=" weather-details"></div>
-              </div>
-              <p class="card-text">
-                <small class="text-muted"></small>
-                  <div>Humidity: <span  id="humidity"></span>%</div>
-                  <div>Wind: <span id="wind"></span> km/h</div>
-                </small>
-              </p>
-            </div>
-          </div>
+      <div class="overview">
+        <h2 id="city" class="cityName"></h2>
+        <div>Last updated: <span id="today-date"></span></div>
+        <div id="description" class="weather-description"></div>
+      </div>
+
+      <div class="row">
+        <img src="" class="float-left col-4" alt="clear" id="icon" />
+
+        <div class="float-left col-4">
+          <strong id="temp" class="temperature weather-details"> </strong>
+          <a href="x" id="celsius-link">°C</a> |
+          <a href="x" id="fahrenheit-link">°F</a>
+        </div>
+
+        <div class="col-4 weather-details">
+          <div>Humidity: <span id="humidity"></span>%</div>
+          <div>Wind: <span id="wind"></span> km/h</div>
         </div>
       </div>
 
-      <div class="card-group">
-        <div class="card m-2 text-center border-0 bg-transparent">
-          <img
-            src="icon/temperature.png"
-            class="card-img-top w-50 p-3 rounded mx-auto d-block"
-            alt="cold"
-          />
+      <div>
+        <div>
+          <img src="" class="float-left" alt="clear" id="icon" />
           <div class="card-body">
-            <h5 class="card-title dayname">mon</h5>
-            <p class="card-text temperature">1° C</p>
-          </div>
-        </div>
-        <div class="card m-2 text-center border-0 bg-transparent">
-          <img
-            src="icon/snowfall.png"
-            class="card-img-top w-50 p-3 rounded mx-auto d-block"
-            alt="snowfall"
-          />
-          <div class="card-body">
-            <h5 class="card-title dayname">tue</h5>
-            <p class="card-text temperature">1° C</p>
-          </div>
-        </div>
-        <div class="card m-2 text-center border-0 bg-transparent">
-          <img
-            src="icon/sunshine.png"
-            class="card-img-top w-50 p-3 rounded mx-auto d-block"
-            alt="sunshine"
-            width="50px"
-          />
-          <div class="card-body">
-            <h5 class="card-title dayname">wed</h5>
-            <p class="card-text temperature">1° C</p>
-          </div>
-        </div>
-        <div class="card m-2 text-center border-0 bg-transparent">
-          <img
-            src="icon/lightning-bolt.png"
-            class="card-img-top w-50 p-3 rounded mx-auto d-block"
-            alt="storm"
-          />
-          <div class="card-body">
-            <h5 class="card-title dayname">thu</h5>
-            <p class="card-text temperature">1° C</p>
-          </div>
-        </div>
-        <div class="card m-2 text-center border-0 bg-transparent">
-          <img
-            src="icon/sun.png"
-            class="card-img-top w-50 p-3 rounded mx-auto d-block"
-            alt="sun"
-          />
-          <div class="card-body">
-            <h5 class="card-title dayname">fri</h5>
-            <p class="card-text temperature">1° C</p>
+            <h5>mon</h5>
+            <p>1° C</p>
           </div>
         </div>
       </div>
     </div>
     <footer>
-      <div>
-        <i class="fab fa-github"></i>
-        <a href="https://github.com/JadziaRydzyk/weather-app"
-          >Look at my GitHub repository</a
-        >
-      </div>
-      Icons made by <a href="" title="juicy_fish">juicy_fish</a> from
-      <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      <i class="fab fa-github"></i>
+      <a class="git-hub-link" href="https://github.com/JadziaRydzyk/weather-app"
+        >Look at my GitHub repository</a
+      >
     </footer>
 
     <script src="src/index.js"></script>

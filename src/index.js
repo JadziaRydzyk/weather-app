@@ -113,5 +113,3 @@ if (min < 10) {
   min = `0${min}`;
 }
 today.innerHTML = `${day} ${hour}:${min}`;
-
-search("New York");
