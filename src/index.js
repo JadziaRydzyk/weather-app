@@ -24,8 +24,7 @@ function search(event) {
   city.innerHTML = `${searchInput.value}`;
 }
 
-function searchTemp(event) {
-  event.preventDefault();
+function searchTemp(city) {
   let searchInput = document.querySelector("#search-input");
   let cityTemp = `${searchInput.value}`;
   let apiKey = `6a9394d6d39a65a984e888e3891d896e`;
@@ -84,6 +83,26 @@ function showCelsiusTemp(event) {
   tempElement.innerHTML = Math.round(celsiusTemperature);
 }
 
+function displayForecast() {
+  let forecastElemnt = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `  <div class="col-2">
+              <div class="forecast-date">${day}</div>
+              <img src="" class="float-left" alt="clear" id="icon" />
+              <span class="forecast-temp-min"> 12° </span>
+              <span class="forecast-temp-max"> 20° </span>
+            </div>
+        `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElemnt.innerHTML = forecastHTML;
+}
+
 let celsiusTemperature = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
@@ -113,3 +132,5 @@ if (min < 10) {
   min = `0${min}`;
 }
 today.innerHTML = `${day} ${hour}:${min}`;
+
+displayForecast();
