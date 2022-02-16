@@ -20,7 +20,6 @@ function showTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  celsiusTemperature = response.data.main.temp;
 
   getForecast(response.data.coord);
 }
@@ -70,7 +69,7 @@ function showCurrentTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  celsiusTemperature = response.data.main.temp;
+
   getForecast(response.data.coord);
 }
 
@@ -79,18 +78,6 @@ function currentTemp() {
 }
 let localTempButton = document.querySelector("#localTemp-button");
 localTempButton.addEventListener("click", currentTemp);
-
-function showFahrenheitTemp(event) {
-  event.preventDefault();
-  let tempElement = document.querySelector("#temp");
-  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
-  tempElement.innerHTML = Math.round(fahrenheitTemp);
-}
-function showCelsiusTemp(event) {
-  event.preventDefault();
-  let tempElement = document.querySelector("#temp");
-  tempElement.innerHTML = Math.round(celsiusTemperature);
-}
 
 function formatDayForecast(timestemp) {
   let date = new Date(timestemp * 1000);
@@ -129,14 +116,6 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElemnt.innerHTML = forecastHTML;
 }
-
-let celsiusTemperature = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemp);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsiusTemp);
 
 let now = new Date();
 let today = document.querySelector("#today-date");
