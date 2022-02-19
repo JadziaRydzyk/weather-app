@@ -14,12 +14,16 @@ footer {
   color: #f0e9d2;
   text-decoration: none;
 }
+.git-hub-link:hover {
+  color: #f0e9d2;
+}
 
 .all {
   background: #678983;
   max-width: 600px;
   margin: 30px auto;
   padding: 20px;
+  font-family: "Lato", sans-serif;
 }
 .container {
   background-color: #f0e9d2;
@@ -38,6 +42,7 @@ footer {
   border-radius: 5px;
   border-style: none;
   margin: 10px;
+  text-align: left;
 }
 .search {
   padding: 10px;
@@ -48,7 +53,7 @@ footer {
   display: inline;
 }
 
-.row {
+.today-weather {
   margin-bottom: 50px;
 }
 .info {
@@ -73,12 +78,30 @@ footer {
 .weather-description::first-letter {
   text-transform: capitalize;
 }
+.temp-box {
+  text-align: center;
+  display: block;
+}
 .temperature {
-  font-size: 60px;
+  font-size: 70px;
   line-height: 1;
   font-weight: 400;
 }
 .weather-details {
   position: relative;
   bottom: -40px;
+}
+.forecast {
+  display: block;
+  text-align: center;
+
+  padding-bottom: 10px;
+}
+.icon {
+  position: relative;
+  left: -25px;
+  margin: 0px 5px;
+}
+.forecast-temp {
+  margin: 5px;
 }

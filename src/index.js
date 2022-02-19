@@ -95,17 +95,17 @@ function displayForecast(response) {
     if (index < 6) {
       forecastHTML =
         forecastHTML +
-        `  <div class="col-2">
+        `  <div class="col-2" class="forecast">
               <div class="forecast-date">${formatDayForecast(
                 forecastDay.dt
               )}</div>
               <img src="http://openweathermap.org/img/wn/${
                 forecastDay.weather[0].icon
-              }@2x.png" />
-              <span class="forecast-temp-min"> ${Math.round(
+              }@2x.png" class="icon" />
+              <span class="forecast-temp forecast-temp-min"> ${Math.round(
                 forecastDay.temp.max
               )}° </span>
-              <span class="forecast-temp-max"> ${Math.round(
+              <span class="forecast-temp forecast-temp-max"> ${Math.round(
                 forecastDay.temp.min
               )}° </span>
             </div>
