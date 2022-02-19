@@ -31,7 +31,7 @@ function search(event) {
   city.innerHTML = `${searchInput.value}`;
 }
 
-function searchTemp(city) {
+function searchTemp(response) {
   let searchInput = document.querySelector("#search-input");
   let cityTemp = `${searchInput.value}`;
   let apiKey = `6a9394d6d39a65a984e888e3891d896e`;
@@ -116,6 +116,15 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElemnt.innerHTML = forecastHTML;
 }
+function showCity(city) {
+  let cityInfo = document.querySelector("#city");
+  cityInfo.innerHTML = city;
+  let apiKey = `6a9394d6d39a65a984e888e3891d896e`;
+  let tempUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(`${tempUrl}`).then(showTemp);
+}
+
+showCity("Katowice");
 
 let now = new Date();
 let today = document.querySelector("#today-date");
